@@ -1,3 +1,13 @@
 sounddevice
 pyusb
 soundfile
+scipy
+pyroomacoustics
+librosa
+matplotlib
+pandas
+numpy
+torch
+pytorch_lightning
+torchvision
+torchaudio
