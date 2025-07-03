@@ -4,3 +4,4 @@ venv
 recording
 dataset
 audio_distill/audioset
+audio_distill/lightning_logs

@@ -17,11 +17,12 @@ class Sound_Event_Detector(nn.Module):
             self.backbone = Frame_MobileNet(self.backbone, num_classes, frame_length)
         
     def forward(self, x, return_fmaps=False):
-        if not isinstance(x, torch.Tensor):
+        if isinstance(x, list) and len(x) == 2:
             x, vision = x
             x = self.preprocess(x)
             x = self.backbone((x.unsqueeze(1), vision), return_fmaps=return_fmaps)
         else:
+            x = x[0]
             x = self.preprocess(x)
             x = self.backbone(x.unsqueeze(1), return_fmaps=return_fmaps)
         
