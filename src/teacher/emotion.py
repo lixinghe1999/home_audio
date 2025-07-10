@@ -1,0 +1,8 @@
+from funasr import AutoModel
+
+model = AutoModel(model="emotion2vec_plus_large")
+
+wav_file = f"{model.model_path}/example/test.wav"
+
+res = model.generate(wav_file, output_dir="./outputs", granularity="utterance", extract_embedding=False)
+print(res)
